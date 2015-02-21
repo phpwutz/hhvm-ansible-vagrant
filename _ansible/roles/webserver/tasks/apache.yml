@@ -1,6 +1,6 @@
 ---
 - name: install apache
-  apt: name=apache2 state=present
+  apt: name=apache2 state=absent
 - name: Copy across new virtualhost
   template: 
     src=virtual-host.conf.j2 

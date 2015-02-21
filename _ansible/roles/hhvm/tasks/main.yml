@@ -1,0 +1,27 @@
+---
+- name: Install Boost
+  apt: name=libboost-all-dev state=present
+
+- name: Install HHVM dependencies
+  apt: name=software-properties-common state=present
+
+- name: Add HHVM repo key 
+  apt_key: keyserver=keyserver.ubuntu.com id=0x5a16e7281be7a449
+
+- name: Add HHVM repo
+  apt_repository: repo='deb http://dl.hhvm.com/ubuntu trusty main'
+
+- name: Update apt
+  apt: update_cache=yes
+
+- name: Install HHVM and php5-cli (for command-line php)
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - hhvm
+    - php5-cli
+
+# - name: Change default nginx site
+#   template: src=nginx.tpl dest=/etc/nginx/sites-available/default
+#   notify:
+#     - restart nginx
+#     - restart hhvm
