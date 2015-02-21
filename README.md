@@ -5,6 +5,6 @@ Just clone the repository, run `vagrant up` and point your browser to `http://lo
 
 There is a simple index.php which will be executed in HHVM via nginx.
 
-Please note: This is just a bootstrapping setup for people who want to give hhvm a tr, I am not involved with any of the software provided.
+Please note: This is just a bootstrapping setup for people who want to give hhvm a try, I am not involved with any of the software provided.
 
 Have fun poking HHVM :)
