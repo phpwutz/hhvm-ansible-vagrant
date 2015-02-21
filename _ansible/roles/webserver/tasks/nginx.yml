@@ -3,5 +3,3 @@
   apt: name=nginx state=present
   notify:
     - reload nginx
-- name: start nginx
-  service: name=nginx state=started

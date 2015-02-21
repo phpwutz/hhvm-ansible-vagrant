@@ -8,6 +8,6 @@
       apt: update_cache=yes
   roles:
     - tools
-    - hhvm
     - webserver
+    - hhvm
     - database
