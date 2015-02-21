@@ -1,0 +1,7 @@
+---
+- name: install vim
+  apt: name=vim state=present
+- name: install zsh
+  apt: name=zsh state=present
+- name: make zsh default shell
+  shell: chsh -s $(which zsh)
