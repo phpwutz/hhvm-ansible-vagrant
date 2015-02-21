@@ -20,8 +20,8 @@
     - hhvm
     - php5-cli
 
-# - name: Change default nginx site
-#   template: src=nginx.tpl dest=/etc/nginx/sites-available/default
-#   notify:
-#     - restart nginx
-#     - restart hhvm
+- name: Change default nginx site
+  template: src=nginx.tpl dest=/etc/nginx/sites-available/default
+  notify:
+    - restart nginx
+    - restart hhvm

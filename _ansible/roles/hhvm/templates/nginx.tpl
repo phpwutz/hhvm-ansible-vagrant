@@ -1,10 +1,10 @@
 server {
     listen  80;
 
-    root {{ doc_root }};
+    root {{ document_root }};
     index index.html index.php;
 
-    server_name {{ ansible_eth1.ipv4.address }};
+    server_name {{ ansible_eth0["ipv4"]["address"] }};
 
     location / {
         try_files $uri $uri/ /index.php?q=$uri&$args;
@@ -24,5 +24,4 @@ server {
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
     }
-
 }
